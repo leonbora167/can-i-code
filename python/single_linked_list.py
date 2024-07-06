@@ -100,7 +100,7 @@ if __name__ == "__main__":
     whole object.head as the node itself which contains .data and .next(None).
     In the second go we again pass the value which goes inside .data and then use the previously initialized .head 
     and put it inside this latest objects .next, hence this .next points/contains the previous node now with its .data and .next.
-    Then we make this object which conatains the latest value in the first "position" as the head and this process continues further.
+    Then we make this object which contains the latest value in the first "position" as the head and this process continues further.
     '''   
     ll.insert_at_end(99)
     ll.insert_values(["Batman", "Robin", "Joker", "Batgirl"])
