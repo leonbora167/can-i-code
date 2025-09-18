@@ -102,26 +102,45 @@ class LinkedList:
         if(index <0 or index >= self.length):
             print("Out of Bounds")
         if(index == 0): #At head
+            print(f"Removed value at index {index} is {self.head.value}")
             self.head = self.head.next 
             self.length = self.length - 1 
-        elif(index == self.length-1): #AT tail
+        elif(index == self.length-1): #At tail
             temp = self.head 
             pre = self.head 
             while(temp != self.tail):
                 pre = temp 
                 temp = temp.next 
+            print(f"Removed value at index {index} is {temp.value}")
             pre.next = None 
             self.tail = pre 
-            self.length = self.length - 1 
-        else: #ANy position 
-            counter = 0 
+            self.length = self.length - 1
+        else: #Any index 
             temp = self.head 
             pre = self.head 
-            while counter < index: 
+            counter = 0
+            while(True):
                 pre = temp 
                 temp = temp.next
+                counter = counter + 1 
+                if(counter == index):
+                    break 
+            print(f"Removed value at index {index} is {temp.value}")
             pre.next = temp.next 
             self.length = self.length - 1
+
+    def reverse(self):
+        temp = self.head 
+        self.head = self.tail 
+        self.tail = temp 
+        before = None 
+        after = temp.next 
+        for i in range(self.length):
+            after = temp.next 
+            temp.next = before 
+            before = temp 
+            temp = after 
+
 
         
         
@@ -158,7 +177,15 @@ ll1.replace_val(200, 1)
 ll1.append_first(15)
 
 ll1.remove_any(0)
-ll1.remove_any(1)
+ll1.remove_any(5)
+ll1.remove_any(2)
 
+print("Linked list before reversal")
 ll1.print()
-print(ll1.tail.value)
+print("Linked list after reversal is ")
+ll1.reverse()
+ll1.print()
+
+# print("Head is ", ll1.head.value)
+# print("Value after head is ", ll1.head.next.value)
+# print("Tail is ",ll1.tail.value)
