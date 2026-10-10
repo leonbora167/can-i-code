@@ -1,0 +1,21 @@
+# Build output directories
+/build/
+/build-*/
+/out/
+/bin/
+
+# vcpkg local installation and downloaded packages
+/vcpkg/
+/vcpkg_installed/
+
+# IDE / Editor folders
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.user
+*.suo
+compile_commands.json
+CMakeUserPresets.json
+
